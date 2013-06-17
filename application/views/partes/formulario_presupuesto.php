@@ -296,6 +296,7 @@
         <td>
         <input type="radio" id="mantenimientoSI" name="mantenimiento" value="mantenimiento_SI" onclick="encender_elemento('lista_mantenimiento');"></input>
         <label for="mantenimientoSI"><span>Si</span></label>
+         </td> 
         <td>
         <input type="radio" id="mantenimientoNO" name="mantenimiento" value="mantenimiento_NO" onclick="apagar_elemento('lista_mantenimiento');"></input>
         <label for="mantenimientoNO"><span>No</span></label>
@@ -355,6 +356,6 @@
     </table>
     </div>
     
-    <a href="#"><img class="boton_presupuesto" src="imagenes/presupuesto.png" onclick="validar_presupuesto();"></a>
+    <a href="#"><img class="boton_presupuesto" src="<?php echo base_url();?>/imagenes/presupuesto.png" onclick="validar_presupuesto();"></a>
     
   </form>

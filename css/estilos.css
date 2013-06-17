@@ -1,5 +1,14 @@
+/*este selector es para que no se mueva la pagina al aparecer el scroll lateral*/
+html{
+   overflow-y:scroll;
+   overflow-x:auto;
+}
+
 body{
     background-color:#d1d1d1;
+    background-color:#eee;
+    /*background:url('../imagenes/fondo.png') repeat-y center;
+    background-color:#ead7c7;*/
     font-family: Arial, Helvetica, sans-serif;
     color:#8A8D91;
 }
@@ -85,7 +94,11 @@ body{
 #menu ul li a:hover{
 	color:#f0801b;
         background-color:#dddddd;
+        /*color:#065c9f;
+        background-color:#dddddd;*/
         border-radius:20px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
 }
 /*------------------------FIN MENU-----------------------------------*/
 
@@ -148,22 +161,34 @@ body{
     color:white;
     overflow:hidden;
     padding-bottom:20px;
+    border-radius:0px 70px;
+    -moz-border-radius:0px 70px; 
 }
 
 #bloque_derecho{
     float:right;
     background-color:#f09039;
+    box-shadow:10px 10px 5px #f0801b;
+    -moz-box-shadow:10px 10px 5px #f0801b;
+    -webkit-box-shadow:10px 10px 5px #f0801b;
 }
+
 
 #bloque_centro{
     /*background-color:#266897;*/
     background-color:#f0801b;
     margin-left:17px;
+    box-shadow:10px 10px 5px #f09e54;
+    -moz-box-shadow:10px 10px 5px #f09e54;
+    -webkit-box-shadow:10px 10px 5px #f09e54;
 }
 
 #bloque_izquierdo{
     /*background-color:#5BB5A6;*/
     background-color:#f09e54;
+    box-shadow:10px 10px 5px #f09039;
+    -moz-box-shadow:10px 10px 5px #f09039;
+    -webkit-box-shadow:10px 10px 5px #f09039;
 }
 
 .titulo_bloque{
@@ -195,59 +220,7 @@ body{
 /*------------------------ FIN CONTENIDO-----------------------------------*/
 
 
-/*------------------------ FORMULARIO CONTACTA-----------------------------------*/
-#formu_contacta{
-    float:right;
-}
-.error_cita{
-	display: block;
-	width: 260px;
-	text-align: center;
-	color: #F0801B;
-	font-size: 0.7em;
-}
 
-.elem_formu {
-    /*border: 1px solid #009FE3;*/
-    border-radius: 5px 5px 5px 5px;
-    height: 23px;
-    width: 260px;
-    color:#8A8D91;
-}
-
-#consulta_cita{
-    height:200px;
-    border:1px solid #8A8D91;
-    resize:none;
-}
-
-.boton{
-    width: 100px;
-    float:right;
-    background-color:#f0801b;
-    border:1px solid #8A8D91;
-    height:25px; 
-    color:#555658;
-    color:white;
-    font-weight:bold;
-}
-
-.boton:hover{
-    width: 100px;
-    float:right;
-    background-color:#F5A05C;
-    border:1px solid #8A8D91;
-}
-
-.enviar_ok{
-	display: block;
-	width: 260px;
-	text-align: center;
-	color: #F0801B;
-	font-size: 0.9em;
-        margin-top:10px;
-}
-/*------------------------ FIN FORMULARIO CONTACTA-----------------------------------*/
 
 /*------------------------ PIE-----------------------------------*/
 #pie{
@@ -404,94 +377,7 @@ body{
 /*-------------------------- ZONA  PRIVADA -----------------------------*/
 
 
-/*----------------- MENSAJES ERROR -------------------------------*/
-.mensaje_error{
-    color:red;
-    margin:0 auto;
-    border:0px solid black;
-    width:500px;
-    text-align:center;
-}
-/*----------------- FIN MENSAJE ERROR -------------------------------*/
 
-
-/*----------------- FORMULARIO PRESUPUESTO -------------------------------*/
-.fondo_presupuesto{
-   overflow:hidden;
-}
-
-.panel_presupuesto{
-    width:305px;
-    float:left;
-    margin-left:15px; 
-    height:400px;
-}
-
-
-.panel_presupuesto tr{
-    border:0px solid black;
-    height:40px;
-}
-
-.panel_presupuesto th{
-    text-align:left;
-    font-size:1.1em;
-}
-
-#consulta_web{
-    height:150px;
-    border:1px solid #8A8D91;
-    resize:none;
-}
-
-.error_presupuesto{
-	display: block;
-	width: 260px;
-	text-align: center;
-	color: #F0801B;
-	font-size: 0.7em;
-}
-
-.apagado{
-    /*visibility:hidden;*/
-    display:none;
-}
-
-.boton_presupuesto{
-    margin-left:200px;
-    margin-top:40px;
-}
-
-
-input[type="radio"] {
-visibility: hidden;
-width: 0px;
-height: 0px;
-padding: 0px;
-margin: 0px;
-margin-top:20px;
-}
-label {
-padding-left: 20px;
-height: 16px;
-padding-top:13px;
-}
-
-input[type="radio"] + label{
-background: url("../imagenes/blanco50x50.png") no-repeat;
-/*background-position:left bottom; */
-width:20px;
-height:26px;
-/*display:block;
-float:right;*/
-}
-
-input[type="radio"]:checked + label{
-background: url("../imagenes/cuadradoclic50x50.png") no-repeat;
-/*background-position:left bottom;*/ 
-padding-top:13px;
-}
-/*----------------- FIN FORMULARIO PRESUPUESTO -------------------------------*/
 
 /*----------------- SU PRESUPUESTO -------------------------------*/
 #texto_presupuesto{
@@ -528,92 +414,43 @@ padding-top:13px;
     margin-top:25px;
     margin-right:0px;
 }
+
+#mensaje_pdf{
+    width:400px;
+    margin:0 auto;
+    background-color:#f0801b;
+    height:100px;
+    position:relative;
+    top:-400px;
+    margin-bottom:-100px;
+    border:5px solid orange;
+}
+
+#mensaje_pdf p{
+    color:#eeeeee;
+    text-align:center;
+    padding-top:15px;
+}
+
 /*----------------- FIN SU PRESUPUESTO -------------------------------*/
 
-/*----------------- PLANTILLAS -------------------------------*/
-#arriba{
-width:920px;
-height:50px;
-border:0px solid black;
-margin:0 auto;
- background:url(../imagenes/up.png) no-repeat;
+
+
+/*----------------- PANEL DE CONTROL -------------------------------*/
+
+.paneles{
+    float:left;
+    width:315px;
+    margin-top:2px;
+    padding-bottom:20px;
+    border:2px solid #f0801b;
+    height:295px;
 }
 
-#abajo{
-width:920px;
-height:50px;
-border:0px solid black;
-margin:0 auto;
- background:url(../imagenes/down.png) no-repeat;
+.paneles:hover{
+    border:2px solid #065c9f;
+    box-shadow: inset 0px 0px 15px #065c9f;
+    -moz-box-shadow: inset 0px 0px 15px #065c9f;
+    -webkit-box-shadow: inset 0px 0px 15px #065c9f;
 }
-
-.pestana_centro{
-    background:url(../imagenes/amarillo3.png) no-repeat;
-    height:500px;
-    width:850px;
-    margin:0 auto;
-    border:0px solid black;
-    margin-bottom:-40px;
-}
-
-#lista_plantillas{
-}
-
-#lista_plantillas tr {
-    /*margin-bottom:5px;
-    display:block;*/
-    height:35px;
-    /*color:#065c9f;*/
-    color:#515254;
-}
-
-#lista_plantillas td {
-    border:0px solid black;
-    vertical-align:bottom;
-    width:190px;
-}
-
-#lista_plantillas input[type="checkbox"] {
-visibility: hidden;
-width: 0px;
-height: 0px;
-padding: 0px;
-margin: 0px;
-margin-top:20px;
-}
-
-
-#lista_plantillas input[type="checkbox"] + label{
-background: url("../imagenes/blanco50x50.png") no-repeat;
-/*background-position:left bottom; */
-width:20px;
-height:26px;
-padding-top:10px;
-/*display:block;
-float:right;*/
-}
-
-#lista_plantillas input[type="checkbox"]:checked + label{
-background: url("../imagenes/cuadradoclic50x50.png") no-repeat;
-/*background-position:left bottom;*/ 
-padding-top:10px;
-}
-
-.boton_siguiente{
-    float:right;
-    margin-top:15px;
-    margin-right:10px;
-}
-
-.plantilla{
-    border-bottom:3px solid orange;
-    font-size:1.5em;
-    padding-bottom:3px;
-    padding-right:10px;
-    color:#065c9f;
-    font-weight:bold;
-    /*text-transform: uppercase; */
-}
-
-/*----------------- FIN PLANTILLAS -------------------------------*/
-
+/*----------------- FIN PANEL DE CONTROL -------------------------------*/

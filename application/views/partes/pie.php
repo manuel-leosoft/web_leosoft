@@ -4,9 +4,9 @@
     <div id="contenedor_menu_pie">
         <div id="menu_pie">
             <ul>
-            	<li><a href="quienes_somos.php" title="Quienes somos">Qui&eacute;nes somos</a></li>
-                <li><a href="contacto.php" title="Contactar">Contacto</a></li>
-                <li><a href="aviso_legal.php" title="Contactar">Aviso legal</a></li>
+            	<li><a href="quienes_somos" title="Quienes somos">Qui&eacute;nes somos</a></li>
+                <li><a href="contacto" title="Contactar">Contacto</a></li>
+                <li><a href="aviso_legal" title="Contactar">Aviso legal</a></li>
             </ul>
         </div>
     </div>

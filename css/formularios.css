@@ -1,0 +1,146 @@
+/*------------------------ FORMULARIO CONTACTA-----------------------------------*/
+#formu_contacta{
+    float:right;
+}
+.error_cita{
+	display: block;
+	width: 260px;
+	text-align: center;
+	color: #F0801B;
+	font-size: 0.7em;
+}
+
+.elem_formu {
+    /*border: 1px solid #009FE3;*/
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    height: 23px;
+    width: 260px;
+    color:#8A8D91;
+}
+
+#consulta_cita{
+    height:200px;
+    border:1px solid #8A8D91;
+    resize:none;
+}
+
+.boton{
+    width: 100px;
+    float:right;
+    background-color:#f0801b;
+    border:1px solid #8A8D91;
+    height:25px; 
+    color:#555658;
+    color:white;
+    font-weight:bold;
+}
+
+.boton:hover{
+    width: 100px;
+    float:right;
+    background-color:#F5A05C;
+    border:1px solid #8A8D91;
+}
+
+.enviar_ok{
+	display: block;
+	width: 260px;
+	text-align: center;
+	color: #F0801B;
+	font-size: 0.9em;
+        margin-top:10px;
+}
+/*------------------------ FIN FORMULARIO CONTACTA-----------------------------------*/
+
+
+
+/*----------------- MENSAJES ERROR -------------------------------*/
+.mensaje_error{
+    color:red;
+    margin:0 auto;
+    border:0px solid black;
+    width:500px;
+    text-align:center;
+}
+/*----------------- FIN MENSAJE ERROR -------------------------------*/
+
+
+/*----------------- FORMULARIO PRESUPUESTO -------------------------------*/
+.fondo_presupuesto{
+   overflow:hidden;
+}
+
+.panel_presupuesto{
+    width:305px;
+    float:left;
+    margin-left:15px; 
+    height:400px;
+}
+
+
+.panel_presupuesto tr{
+    border:0px solid black;
+    height:40px;
+}
+
+.panel_presupuesto th{
+    text-align:left;
+    font-size:1.1em;
+}
+
+#consulta_web{
+    height:150px;
+    border:1px solid #8A8D91;
+    resize:none;
+}
+
+.error_presupuesto{
+	display: block;
+	width: 260px;
+	text-align: center;
+	color: #F0801B;
+	font-size: 0.7em;
+}
+
+.apagado{
+    /*visibility:hidden;*/
+    display:none;
+}
+
+.boton_presupuesto{
+    margin-left:200px;
+    margin-top:40px;
+}
+
+
+input[type="radio"] {
+visibility: hidden;
+width: 0px;
+height: 0px;
+padding: 0px;
+margin: 0px;
+margin-top:20px;
+}
+label {
+padding-left: 20px;
+height: 16px;
+padding-top:13px;
+}
+
+input[type="radio"] + label{
+background: url("../imagenes/blanco50x50.png") no-repeat;
+/*background-position:left bottom; */
+width:20px;
+height:26px;
+/*display:block;
+float:right;*/
+}
+
+input[type="radio"]:checked + label{
+background: url("../imagenes/cuadradoclic50x50.png") no-repeat;
+/*background-position:left bottom;*/ 
+padding-top:13px;
+}
+/*----------------- FIN FORMULARIO PRESUPUESTO -------------------------------*/

@@ -5,7 +5,7 @@
     <title><?php echo $title;?></title>
     
     <!-- enlazar favicon -->
-    <link rel="shortcut icon" href="favicon.ico" >
+    <link rel="shortcut icon" href="<?php echo base_url();?>/imagenes/favicon.ico" >
     
     <!-- enlazar CSS -->
     <!-- css ventana emergente-->
@@ -14,6 +14,10 @@
     <link href="<?php echo base_url();?>css/reset.css" type="text/css" rel="stylesheet" />
     <!-- css general -->
     <link href="<?php echo base_url();?>css/estilos.css" type="text/css" rel="stylesheet" />
+        <!-- css plantillas -->
+    <link href="<?php echo base_url();?>css/plantillas.css" type="text/css" rel="stylesheet" />
+    <!-- css formularios -->
+    <link href="<?php echo base_url();?>css/formularios.css" type="text/css" rel="stylesheet" />
     
     <!-- enlazar javascript y jquery -->
     <script src="<?php echo base_url();?>jquery/jquery-1.9.1.min.js" type="text/javascript"/></script>
@@ -21,6 +25,7 @@
     <script src="<?php echo base_url();?>js/formulario_contacta.js" type="text/javascript"/></script>
     <script src="<?php echo base_url();?>js/ventana_emergente.js" type="text/javascript"/></script>
     <script src="<?php echo base_url();?>js/funciones_ajax.js" type="text/javascript"/></script>
+    <script src="<?php echo base_url();?>js/funciones.js" type="text/javascript"/></script>
     
     <!-- c�digo para el slider -->
     <script type="text/javascript">
