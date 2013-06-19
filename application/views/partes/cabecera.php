@@ -13,12 +13,12 @@
     <div id="contenedor_menu">
         <div id="menu">
             <ul>
-            	<li><a href="quienes_somos" title="Quienes somos">Qui&eacute;nes somos</a></li>
-                <li><a href="contacto" title="Contactar">Contacto</a></li>
+            	<li><a href="<?php echo base_url();?>index.php/home/quienes_somos" title="Quienes somos">Qui&eacute;nes somos</a></li>
+                <li><a href="<?php echo base_url();?>index.php/home/contacto" title="Contactar">Contacto</a></li>
                 <!--<li><a href="#" title="Dominios">Dominios</a></li>-->
-                <li><a href="presupuesto" title="Presupuesto">Presupuesto</a></li>
+                <li><a href="<?php echo base_url();?>index.php/home/presupuesto" title="Presupuesto">Presupuesto</a></li>
                 <?php if(isset($_SESSION["usuario"])&&($_SESSION["permiso"])==2){ ?>
-                <li><a href="panel_control" title="Panel de control">Panel Control</a></li>
+                <li><a href="<?php echo base_url();?>index.php/home/panel_control" title="Panel de control">Panel Control</a></li>
                 <?php } ?>
 		<li><a href="plantillas" title="Plantilla2">Plantilla2</a></li>
             </ul>

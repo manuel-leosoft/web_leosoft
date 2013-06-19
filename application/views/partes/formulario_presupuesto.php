@@ -1,4 +1,4 @@
-  <form id="formulario_presupuesto" method="POST" action="su_presupuesto.php"><!-- cambiar el action -->
+  <form id="formulario_presupuesto" method="POST" action="<?php echo base_url();?>index.php/presupuesto/enviar"><!-- cambiar el action -->
   
   <div class="fondo_presupuesto">
   

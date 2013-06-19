@@ -93,7 +93,6 @@ function validar_contacta(){
   }
   
   
-  
   if( (campo_vacio("email_cita")) ||  !(comprobar_email("email_cita")) ){ //comprobar el EMAIL.
     error("email_cita","email_cita_error","Error.- Email vac&iacute;o o incorrecto.");
     return false;
@@ -103,7 +102,7 @@ function validar_contacta(){
     error("consulta_cita","consulta_cita_error","El campo mensaje no puede estar vac&iacute;o.");
     return false;
    }
-  alert("dentro");
+  
   formulario_validar.submit(); //enviar el formulario.
 }
 

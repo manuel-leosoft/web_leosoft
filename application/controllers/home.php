@@ -17,6 +17,7 @@ public function contacto(){
 		$this->load->helper('url');  
 		$data['title'] = 'Contacto';
 		$data['main_content'] = 'contacto'; 
+		$data['ok'] ='0';
 		$this->load->view('index.php',$data);
 	}
 public function presupuesto(){
@@ -32,6 +33,20 @@ public function plantillas(){
 		$this->load->view('index.php',$data);
 	}
 	
+function su_presupuesto()
+    {
+		$this->load->helper('url');  
+		$data['title'] = 'Su presupuesto';
+		$data['main_content'] = 'su_presupuesto';
+		$this->load->view('index.php',$data);
+         
+             
+ 
+	}
 
 }
+	
+	
+	
+
 ?>

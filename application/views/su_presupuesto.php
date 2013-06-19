@@ -1,31 +1,10 @@
-<?php
-    session_start();
-    include("partes/head.php");
-?>
-<!-- ************************ FIN HEAD ****************************-->
-<body>
-  
-    <div id="contenedor">
-    
-        <!-- ************************ REDES SOCIALES ****************************-->
-        <?php
-           include("partes/redes_sociales.php");
-        ?>
-        <!-- ************************ FIN REDES SOCIALES ****************************-->
-        
-        <!-- ************************ CABECERA ****************************-->
-        <?php
-            include("partes/cabecera.php");
-        ?>
-        <!-- ************************ FIN CABECERA ****************************-->
-        
-        <!-- ************************ CONTENIDO ****************************-->
+
         <div id="contenido">
             <span class="ruta">Inicio <span class="letra_naranja">></span> Su presupuesto</span>
             <img class="barra" src="imagenes/linea.png" height=3px width="100%" />
             <div class="texto_contenido" style="width:100%;" id="texto_presupuesto">
                 <?php
-                    include("partes/enviar_formulario_presupuesto.php");
+               //     include("partes/enviar_formulario_presupuesto.php");
                 ?>
                 <div class="datos_presupuesto">
                     <span class="letra_azul">Datos generales</span><br>
@@ -35,7 +14,7 @@
                     Email contacto: <span class="letra_naranja"> <?php echo $email ?> </span><br>
                     Detalles: <span class="letra_naranja"> <?php echo $consulta ?> </span><br>
                     
-                    <img src="imagenes/uppostit.png"/>
+                    <img src="<?php echo base_url();?>imagenes/uppostit.png"/>
                     <div id="precio_presupuesto">
                     <table>
                     <tr>
@@ -62,7 +41,7 @@
                     </table>
                     </div>
                     
-                    <img src="imagenes/downpostit.png"/>                    
+                    <img src="<?php echo base_url();?>imagenes/downpostit.png"/>                    
                     
                 </div>
                 
@@ -163,8 +142,8 @@
                     <?php
                     }
                    ?>
-                    <?php $dir="php/generar_pdf.php?precio=$presupuesto&empresa=$empresa&persona=$persona&telefono=$telefono&email=$email&idiomas=$idiomas&espanol=$spanol&ingles=$ingles&frances=$frances&secciones=$secciones&numsecciones=$numero_secciones&usuarios=$usuarios&noticias=$noticias&novedades=$novedades&contacto=$contacto&mapa=$mapa&galeria=$galeria&banners=$banners&smart_phone=$smart_phone&mantenimiento=$mantenimiento&periodico=$man_periodico&imagen=$imagen&hosting=$hosting"?>
-                    <?php $dir2="precio=$presupuesto&empresa=$empresa&persona=$persona&telefono=$telefono&email=$email&idiomas=$idiomas&espanol=$spanol&ingles=$ingles&frances=$frances&secciones=$secciones&numsecciones=$numero_secciones&usuarios=$usuarios&noticias=$noticias&novedades=$novedades&contacto=$contacto&mapa=$mapa&galeria=$galeria&banners=$banners&smart_phone=$smart_phone&mantenimiento=$mantenimiento&periodico=$man_periodico&imagen=$imagen&hosting=$hosting"?>
+                    <?php // $dir="php/generar_pdf.php?precio=$presupuesto&empresa=$empresa&persona=$persona&telefono=$telefono&email=$email&idiomas=$idiomas&espanol=$spanol&ingles=$ingles&frances=$frances&secciones=$secciones&numsecciones=$numero_secciones&usuarios=$usuarios&noticias=$noticias&novedades=$novedades&contacto=$contacto&mapa=$mapa&galeria=$galeria&banners=$banners&smart_phone=$smart_phone&mantenimiento=$mantenimiento&periodico=$man_periodico&imagen=$imagen&hosting=$hosting"?>
+                    <?php //$dir2="precio=$presupuesto&empresa=$empresa&persona=$persona&telefono=$telefono&email=$email&idiomas=$idiomas&espanol=$spanol&ingles=$ingles&frances=$frances&secciones=$secciones&numsecciones=$numero_secciones&usuarios=$usuarios&noticias=$noticias&novedades=$novedades&contacto=$contacto&mapa=$mapa&galeria=$galeria&banners=$banners&smart_phone=$smart_phone&mantenimiento=$mantenimiento&periodico=$man_periodico&imagen=$imagen&hosting=$hosting"?>
                     <!--<a class="pdf" target="_blank" href=<?php echo $dir ?>><img src="imagenes/generar_pdf.png"/></a>-->
                     <img class="pdf" src="imagenes/Generar_pdf.png" id="generar_pdf"/>
                     <script type="text/javascript">
@@ -195,17 +174,4 @@
              <div style="clear:both"></div>  
               <div style="display:none;"id="mensaje_pdf"></div>       
         </div>
-        
-        <!-- ************************ FIN CONTENIDO ****************************-->
-        
-         <!-- ************************ PIE ****************************-->
-        <?php
-            include("partes/pie.php");
-        ?>
-        <!-- ************************ FIN PIE ****************************-->
-        
-    </div>  
-     
-
-  </body>
-</html>
+    
