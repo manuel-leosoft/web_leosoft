@@ -28,6 +28,8 @@ public function presupuesto(){
 	}
 public function plantillas(){
 		$this->load->helper('url');  
+                $this->load->database();
+                $this->load->model("Plantilla");
 		$data['title'] = 'Plantillas';
 		$data['main_content'] = 'plantillas';
 		$this->load->view('index.php',$data);
@@ -43,6 +45,22 @@ function su_presupuesto()
              
  
 	}
+        
+        
+        function contar_numero_plantillas()
+        {
+            $this->load->helper('url');  
+            $this->load->database();
+            $this->load->model("Plantilla");
+            $this->load->view('php/contar_numero_plantillas.php');
+        }
+        
+        
+        function demo()
+        {
+            $this->load->helper('url');  
+            $this->load->view('demo.php');
+        }
 
 }
 	

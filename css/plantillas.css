@@ -103,6 +103,21 @@ padding-top:10px;
     display:none;
 }
 
+
+#numero_plantillas{
+    border-radius:5px;
+    -moz-border-radius:5px
+    -webkit-border-radius:5px;
+    border:2px solid #065C9F;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:#f0801b;
+    color:#065C9F;
+    color:white;
+    display:none;
+}
+
 #vista_previa{
     border:0px solid red;
     width:170px;float:left;
@@ -117,8 +132,13 @@ div a, .tipo{
 }
 
 #contenedor_plantillas{
-    border:1px solid black;
     padding-left:30px;
+    padding-bottom:25px;
+    border-radius:20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+     box-shadow:inset 0 0 40px #f0801b;
+    -moz-box-shadow:inset 0 0 40px #f0801b;
 }
 
 .barra_descarga_demo{

@@ -14,6 +14,7 @@
         </div>
         
         <div id="error_plantilla">Seleccione al menos un tema para su plantilla.</div>
+        <div id="numero_plantillas"></div>
             
         <div style="clear:both;"></div>
       

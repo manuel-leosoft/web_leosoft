@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- Plantilla propiedad de Leosoft -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Checkout - Plantilla ventas cosmeticos</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<!--[if IE]>
+		<link rel="stylesheet" href="css/ie.css" type="text/css" charset="utf-8">
+	<![endif]-->
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div id="logo">
+				<a href="index.html"><img src="images/logo.png" alt="LOGO"></a>
+			</div>
+			<div id="navigation">
+				<ul>
+					<li>
+						<a href="index.html">principal</a>
+					</li>
+					<li>
+						<a href="news.html">Novedades</a>
+					</li>
+					<li class="selected">
+						<a href="cosmetics.html">Cosmeticos</a>
+					</li>
+					<li>
+						<a href="skincare.html">Cuidados-piel</a>
+					</li>
+					<li>
+						<a href="fragrance.html">Fragancias</a>
+					</li>
+					<li>
+						<a href="about.html">Nosotros</a>
+					</li>
+					<li>
+						<a href="blogs.html">Blog</a>
+					</li>
+					<li>
+						<a href="contact.html">Contacto</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="contents">
+			<div id="main">
+				<form action="index.html" method="post" id="checkout">
+					<div class="contentbox fillup">
+						<h2>Paso 1 <span>Informacion de factura</span></h2>
+						<ul>
+							<li>
+								<label>Nombre:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Direccion linea 1:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Direccion linea 2:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Ciudad:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Pais:</label>
+								<div class="fakeselect">
+									<!-- browse button is here as background -->
+									<input type="text" name="fakeselect">
+								</div>
+								<select>
+									<option></option>
+								</select>
+							</li>
+							<li>
+								<label>C&oacute;digo postal:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Email:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Tel&eacute;fono:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+						</ul>
+						<p>
+							Nullam avodio iaculis ante, ac placerat tellus turpis ut.
+						</p>
+					</div>
+					<div class="contentbox fillup">
+						<h2>Paso 2 <span>Informacion de envio</span></h2>
+						<ul>
+							<li>
+								<label></label>
+								<label for="billingAdd" class="checkbox">
+									<input type="checkbox" checked="checked" id="billingAdd">
+									Usar informacion de facturacion</label>
+							</li>
+							<li>
+								<label>Nombre:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Direccion linea 1:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Direccion linea 2:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Ciudad:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Pais:</label>
+								<div class="fakeselect">
+									<!-- browse button is here as background -->
+									<input type="text" name="fakeselect">
+								</div>
+								<select>
+									<option></option>
+								</select>
+							</li>
+							<li>
+								<label>C&oacute;digo postal:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Email:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Tel&eacute;fono:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+						</ul>
+					</div>
+					<div class="contentbox">
+						<h2>Paso 3 <span>Opciones de envio</span></h2>
+						<label for="shipping" class="checkbox">
+							<input type="checkbox" checked="checked" id="shipping">
+							Standard shipping $25.00</label>
+						<label for="courier" class="checkbox">
+							<input type="checkbox" checked="checked" id="courier">
+							Mensajeria $31.00</label><br>
+						<p>
+							Nullam avodio iaculis ante, ac placerat tellus turpis ut. neque. In libero sem, vehicula quis feugiat non, malesuada nec tellus.
+						</p>
+					</div>
+					<div class="contentbox" id="payment">
+						<h2>Paso 4 <span>Payment Method</span></h2>
+						<ul>
+							<li>
+								<label>Tarjeta credito:</label>
+								<div class="fakeselect">
+									<!-- browse button is here as background -->
+									<input type="text" name="fakeselect">
+								</div>
+								<select>
+									<option></option>
+								</select>
+							</li>
+							<li>
+								<label>Tipo:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Numero de tarjeta:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+							<li>
+								<label>Nombre del titular:</label>
+								<div class="fakeselect">
+									<!-- browse button is here as background -->
+									<input type="text" name="fakeselect">
+								</div>
+								<select>
+									<option></option>
+								</select>
+							</li>
+							<li>
+								<label>Fecha de expiracion:</label>
+								<input type="text" value="" class="txtfield">
+							</li>
+						</ul>
+						<p>
+							Nullam avodio iaculis ante, ac placerat tellus turpis ut. neque. In libero sem, vehicula quis feugiat non, malesuada nec tellus.
+						</p>
+					</div>
+					<div id="compute" class="contentbox">
+						<h2><span>Detalles</span></h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Descripcion</th>
+									<th>Cantidad</th>
+									<th>Precio unitario</th>
+									<th class="last-child">Precio de la compra</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><div class="frame2">
+											<img src="images/thumbnail-powder.jpg" alt="Img" height="41" width="45">
+										</div>
+										<span class="title">Barra de labios</span>
+										<p>
+											Nullam avodio iaculis ante, ac placerat tellus turpis ut. neque.
+										</p></td>
+									<td>1</td>
+									<td>$1.00</td>
+									<td><span class="total">$1.00</span></td>
+								</tr> <tr>
+									<td><div class="frame2">
+											<img src="images/thumbnail-concealer.jpg" alt="Img" height="41" width="45">
+										</div>
+										<span class="title">Maquillaje</span>
+										<p>
+											In libero sem, vehicula quis feugiat non.
+										</p></td>
+									<td>1</td>
+									<td>$1.00</td>
+									<td><span class="total">$1.00</span></td>
+								</tr> <tr>
+									<td><div class="frame2">
+											<img src="images/thumbnail-eyeShadow.jpg" alt="Img" height="41" width="45">
+										</div>
+										<span class="title">Sombra de ojos</span>
+										<p>
+											Lorem ipsum dolor sit amet.
+										</p></td>
+									<td>1</td>
+									<td>$1.00</td>
+									<td><span class="total">$1.00</span></td>
+								</tr>
+							</tbody>
+						</table>
+						<ul>
+							<li>
+								Total: <span>$3.00</span>
+							</li>
+							<li>
+								Impuestos: <span>$1.00</span>
+							</li>
+							<li>
+								Envios: <span>$24.00</span>
+							</li>
+							<li>
+								Total compra:: <span>$28.00</span>
+							</li>
+						</ul>
+					</div>
+					<input type="submit" value="Submit Order" class="order">
+				</form>
+			</div>
+			<div id="sidebar">
+				<h1>Checkout</h1>
+			</div>
+		</div>
+		<div id="footer">
+			<ul class="navigation">
+				<li>
+					<a href="index.html">principal</a>
+				</li>
+				<li>
+					<a href="news.html">Novedades</a>
+				</li>
+				<li class="selected">
+					<a href="cosmetics.html">Cosmeticos</a>
+				</li>
+				<li>
+					<a href="skincare.html">Cuidados-piel</a>
+				</li>
+				<li>
+					<a href="fragrance.html">Fragancias</a>
+				</li>
+				<li>
+					<a href="about.html">Nosotros</a>
+				</li>
+				<li>
+					<a href="blogs.html">Blog</a>
+				</li>
+				<li>
+					<a href="contact.html">Contacto</a>
+				</li>
+			</ul>
+			<p id="footnote">
+				Leosoft Copyright 2013  Todos los derechos reservados
+			</p>
+		</div>
+	</div>
+</body>
+</html>

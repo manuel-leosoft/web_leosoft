@@ -1,10 +1,12 @@
-<?php 
-    //session_start();
-?>
+
 <div id="redes_sociales">
     <a target="_blank" href="http://twitter.com/Leosoftweb"><img id="twitter" src="<?php echo base_url();?>imagenes/twitter.png"/></a>
     <a target="_blank" href="http://www.facebook.com/pages/Leosoft/542491845793457"><img id="facebook" src="<?php echo base_url();?>imagenes/facebook.png"/></a>
     <a href="quienes_somos.php"><img id="quienes" src="<?php echo base_url();?>imagenes/quienessomosgris.png"/></a>
+    
+    <img src="<?php echo base_url()?>imagenes/iconos_banderas/espana.png">
+    <img src="<?php echo base_url()?>imagenes/iconos_banderas/francia.png">
+    <img src="<?php echo base_url()?>imagenes/iconos_banderas/ingles.png">
     
     <div id="acceso_usuarios">
     <?php if(!isset($_SESSION["usuario"])||($_SESSION["permiso"]!=2)){ ?>
