@@ -5,10 +5,10 @@ class Home extends CI_Controller {
 
                 
 
-		$this->load->helper('url');  
+		//$this->load->helper('url');  
                 $this->load->helper('language'); 
                 $this->lang->load('langue');  
-                //$this->load->helper('url'); 
+                $this->load->helper('url'); 
 		$data['title'] = 'Home';
 		$data['main_content'] = 'principal'; 
 		$this->load->view('index.php',$data);

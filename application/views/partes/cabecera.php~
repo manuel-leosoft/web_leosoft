@@ -14,7 +14,7 @@
         <div id="menu">
             <ul>
             	<li><a href="<?php echo base_url();?>index.php/home/quienes_somos" title="Quienes somos"><?=lang('about.us')?><!--Qui&eacute;nes somos--></a></li>
-                <li><a href="<?php echo base_url();?>index.php/home/contacto" title="Contactar"><?=lang('about.contact')?><!--Contacto!--></a></li>
+                <li><a href="<?php echo base_url();?>index.php/home/contacto" title="Contactar">Contacto</a></li>
                 <!--<li><a href="#" title="Dominios">Dominios</a></li>-->
                 <li><a href="<?php echo base_url();?>index.php/home/presupuesto" title="Presupuesto">Presupuesto</a></li>
                 <?php if(isset($_SESSION["usuario"])&&($_SESSION["permiso"])==2){ ?>
