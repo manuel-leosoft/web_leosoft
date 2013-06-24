@@ -40,13 +40,6 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
-$route['^fr/(.+)$'] = "$1";
-$route['^en/(.+)$'] = "$1";
-$route['^es/(.+)$'] = "$1"; 
-// '/en' and '/fr' -> use default controller
-$route['^fr$'] = $route['default_controller'];
-$route['^en$'] = $route['default_controller'];
-$route['^es$'] = $route['default_controller'];
 
 
 /* End of file routes.php */
