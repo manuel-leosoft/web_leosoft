@@ -16,11 +16,11 @@
             	<li><a href="<?php echo base_url();?>index.php/home/quienes_somos" title="Quienes somos"><?=lang('about.us')?><!--Qui&eacute;nes somos--></a></li>
                 <li><a href="<?php echo base_url();?>index.php/home/contacto" title="Contactar"><?=lang('about.contact')?><!--Contacto!--></a></li>
                 <!--<li><a href="#" title="Dominios">Dominios</a></li>-->
-                <li><a href="<?php echo base_url();?>index.php/home/presupuesto" title="Presupuesto">Presupuesto</a></li>
+                <li><a href="<?php echo base_url();?>index.php/home/presupuesto" title="Presupuesto"><?=lang('about.budget')?><!--Presupuesto!--></a></li>
                 <?php if(isset($_SESSION["usuario"])&&($_SESSION["permiso"])==2){ ?>
                 <li><a href="<?php echo base_url();?>index.php/home/panel_control" title="Panel de control">Panel Control</a></li>
                 <?php } ?>
-		<li><a href="plantillas" title="Plantilla2">Plantilla2</a></li>
+		<li><a href="plantillas" title="Plantilla2"><?=lang('about.template')?><!--Plantilla2!--></a></li>
             </ul>
         </div>
       </div>

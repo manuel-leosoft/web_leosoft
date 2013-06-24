@@ -5,8 +5,8 @@
         <div id="menu_pie">
             <ul>
             	<li><a href="quienes_somos" title="Quienes somos"><?=lang('about.us')?><!--Qui&eacute;nes somos!--></a></li>
-                <li><a href="contacto" title="Contactar">Contacto</a></li>
-                <li><a href="aviso_legal" title="Contactar">Aviso legal</a></li>
+                <li><a href="contacto" title="Contactar"><?=lang('about.contact')?><!--Contacto!--></a></li>
+                <li><a href="aviso_legal" title="Contactar"><?=lang('about.term')?><!--Aviso legal</a>--></li>
             </ul>
         </div>
     </div>

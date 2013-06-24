@@ -1,7 +1,7 @@
 <?php
   
   $lang['about.title']   ="LEOSOFT";
-  $lang['about.us']      ="&Agrave; Propos";
+  $lang['about.us']      ="About US";
   $lang['about.contact'] ="Contact";
   $lang['about.budget']  ="Budget";
   $lang['about.template']="Mod&egrave;le2";
