@@ -20,7 +20,7 @@
         <!-- ************************ FIN CABECERA ****************************-->
         <!-- ************************ CONTENIDO ****************************-->
         <?php 
-              //echo $lang['about.us']; 
+              echo $this->session->userdata('idioma');  
               $this->load->view($main_content);
         ?>
        <!-- ************************ FIN CONTENIDO ****************************-->

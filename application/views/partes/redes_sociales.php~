@@ -7,7 +7,7 @@
     <a href="quienes_somos.php"><img id="quienes" src="<?php echo base_url();?>imagenes/quienessomosgris.png"/></a>
     <a href="<?php echo  $this->session->userdata('idioma');?>idiomas/espanol"><img src="<?php echo base_url();?>imagenes/iconos_banderas/espana.png"></a>
     <a href="<?php echo  $this->session->userdata('idioma');?>idiomas/frances"><img src="<?php echo base_url();?>imagenes/iconos_banderas/francia.png"></a>
-    <a href="<?php echo  $this->session->userdata('idioma');?>idiomas/ingles"><img src="<?php echo base_url();?>imagenes/iconos_banderas/ingles.png"></a>
+    <a href="<?php echo  $this->session->userdata('idioma');?>idiomas/ingles><img src="<?php echo base_url();?>imagenes/iconos_banderas/ingles.png"></a>
     <div id="acceso_usuarios">
     <?php if(!isset($_SESSION["usuario"])||($_SESSION["permiso"]!=2)){ ?>
         <button class="zona_privada" id="create-user">Zona privada</button>
