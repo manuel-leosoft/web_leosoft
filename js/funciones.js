@@ -220,7 +220,26 @@ function mostrar_imagen(img,ref){
 
 
 //funci—n para abrir el demo de las plantillas
-function demo(ruta){
+//se pasa la ruta de la plantilla y en direccion = base_url();
+//se pasa como argumento el id de la plantilla
+// en tipo se obtiene un numero que determina si es recarga de pagina o entrada nueva => si es recarga no se actualiza la base de datos
+function demo(ruta,direccion,id,tipo){
+    
+    var param = "id="+id;
+    
+    if(tipo==0)//si es 0 quiere decir que no es recarga de pagina y por lo tanto hay que actualizar la base de datos
+    { 
+        $.ajax({ 
+            async: false,
+            type: "GET",
+            url: direccion + "index.php/plantillas/contador_visitas_plantilla",
+            data: param,
+            success: function(html){
+                $('#prueba').html(html);
+            }
+        });
+    }
+    
     var frame = document.createElement("iframe");
                 
     frame.id = "demo_plantillas";

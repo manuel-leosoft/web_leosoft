@@ -8,7 +8,8 @@ class Plantilla extends CI_Model
 {
 	public function __construct()
 	{
-		parent::__construct();
+		//parent::__construct();
+                $this->load->database();
 	}
         
         public function numero_plantillas_tipo()
@@ -25,6 +26,21 @@ class Plantilla extends CI_Model
         public function numero_filas($resultado)
         {
             return $resultado->num_rows();
+        }
+        
+        public function mas_visitas($id)
+        {
+            $consulta = "SELECT visitas FROM plantilla WHERE id=$id";
+            $resultado = $this->db->query($consulta);
+            foreach($resultado->result() as $fila)
+            {
+                $visitas = $fila->visitas;
+            }
+            
+            $visitas = $visitas + 1;
+            
+            $consulta = "UPDATE plantilla SET visitas = $visitas WHERE id=$id";
+            $this->db->query($consulta);
         }
         
 }

@@ -4,6 +4,7 @@ class Home extends CI_Controller {
 	public function inicio(){
 		$this->load->helper('url');  
 		$data['title'] = 'Home';
+                $this->session->set_userdata('url',base_url());
 		$data['main_content'] = 'principal'; 
 		$this->load->view('index.php',$data);
 	}
@@ -26,14 +27,6 @@ public function presupuesto(){
 		$data['main_content'] = 'presupuesto';
 		$this->load->view('index.php',$data);
 	}
-public function plantillas(){
-		$this->load->helper('url');  
-                $this->load->database();
-                $this->load->model("Plantilla");
-		$data['title'] = 'Plantillas';
-		$data['main_content'] = 'plantillas';
-		$this->load->view('index.php',$data);
-	}
 	
 function su_presupuesto()
     {
@@ -45,23 +38,6 @@ function su_presupuesto()
              
  
 	}
-        
-        
-        function contar_numero_plantillas()
-        {
-            $this->load->helper('url');  
-            $this->load->database();
-            $this->load->model("Plantilla");
-            $this->load->view('php/contar_numero_plantillas.php');
-        }
-        
-        
-        function demo()
-        {
-            $this->load->helper('url');  
-            $this->load->view('demo.php');
-        }
-
 }
 	
 	

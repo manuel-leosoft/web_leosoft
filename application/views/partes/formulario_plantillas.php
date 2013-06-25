@@ -33,7 +33,8 @@ var params="";
 </script>
 
  <span class="plantilla">Seleccione el tema de su plantilla:</span>
-		<FORM id="formulario_plantillas" style="padding-top:30px;"  ACTION="<?php echo base_url();?>index.php/home/plantillas" METHOD="GET">
+ <div style="display:none">
+		<FORM id="formulario_plantillas" style="padding-top:30px;"  ACTION="<?php echo base_url();?>index.php/plantillas/mostrar" METHOD="GET">
             
 			<table id="lista_plantillas">
 
@@ -383,3 +384,5 @@ var params="";
 		</FORM>
                 
                 <a href="#"><img class="boton_siguiente" src="<?php echo base_url();?>imagenes/siguiente.png" onclick="enviar_formulario_plantillas('formulario_plantillas');"/> </a>
+                
+</div>

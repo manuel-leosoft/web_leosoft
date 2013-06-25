@@ -20,7 +20,7 @@
                 <?php if(isset($_SESSION["usuario"])&&($_SESSION["permiso"])==2){ ?>
                 <li><a href="<?php echo base_url();?>index.php/home/panel_control" title="Panel de control">Panel Control</a></li>
                 <?php } ?>
-		<li><a href="plantillas" title="Plantilla2">Plantilla2</a></li>
+		<li><a href="<?php echo base_url();?>index.php/plantillas/mostrar" title="Plantillas">Plantillas</a></li>
             </ul>
         </div>
       </div>

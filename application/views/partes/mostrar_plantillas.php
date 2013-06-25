@@ -53,6 +53,7 @@
     //Se guarda el resultado de la consulta y el numero de filas devueltas
     $resultado = $this->Plantilla->mostrar_plantillas($consulta);
     $num_rows = $this->Plantilla->numero_filas($resultado);
+    //$this->Plantilla->mas_visitas();
     
         
         if($num_rows==0){//si no hay plantillas del tema seleccionado -> mostrar todas
@@ -71,11 +72,12 @@
             $p = base_url().$fila->vistaPrevia;
             $vista_previa = "showtrail(0,0,'$p');";
             $ruta = $fila->ruta;
+            $id = $fila->id;
         ?>
         <div id="vista_previa">
             <img class="vista_previa_plantilla" src='<?php echo base_url().$fila->vistaPrevia_m; ?>' onmouseover="<?php echo $vista_previa ?>" onmouseout="hidetrail();"/>
-            <div class="barra_descarga_demo">
-                <a class="enlace_demo_descargar" href="javascript:void(window.open('<?php echo base_url()?>index.php/home/demo?plantilla=<?php echo $ruta; ?>','Demo plantilla','resizable=no,location=no,menubar=no, scrollbars=no,status=no,toolbar=no,fullscreen=yes,dependent=no,width=980,height=800,left=100,top=100' ))">Demo</a> | 
+            <div id="demo" class="barra_descarga_demo">
+                <a class="enlace_demo_descargar" href="javascript:void(window.open('<?php echo base_url()?>index.php/plantillas/demo?plantilla=<?php echo $ruta; ?>&&id=<?php echo $id; ?>','Demo plantilla','resizable=no,location=no,menubar=no, scrollbars=no,status=no,toolbar=no,fullscreen=yes,dependent=no,width=980,height=800,left=100,top=100' ))">Demo</a> | 
                 <?php 
                     if (!isset($_SESSION['carro'][$fila->id])){
                 ?>
@@ -93,7 +95,7 @@
             <span style="margin-left:10px">Tema: <a href="plantilla2.php?listaPlantillas[]=<?php echo $fila->tema; ?>"><?php echo $fila->tema; ?></a></span><br>
             <span style="margin-left:10px">Precio: <span class="tipo"> <?php echo $fila->precio; ?>&euro;</span></span><br>
             <span style="margin-left:10px">Ref: <span class="tipo" style="font-size:0.9em;"> <?php echo $fila->referencia; ?></span></span><br>
-            <span style="margin-left:10px">Me gusta: <span class="tipo"> <?php echo $fila->me_gusta; ?></span><span class="letra_azul">Votar</span></span>
+            <span style="margin-left:10px">Visitas: <span class="tipo"> <?php echo $fila->visitas; ?></span></span>
         </div>
         <?php
         }
