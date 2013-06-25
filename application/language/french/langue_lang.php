@@ -6,7 +6,7 @@
   $lang['about.budget']  ="Budget";
   $lang['about.template']="Mod&egrave;le2";
   $lang['about.hosting'] ="H&eacute;bergement:<br>Essaie son h&eacute;bergement gratuitement pendant 30 jours,si vous n'&ecirc;tes pas  
-                           d'accord ne payer pas";
+                           content ne payer pas";
   
 
   $lang['about.CRM']     ="CRM:<br>Gestion,facturation,bas&eacute;e sur web,sans installation dans votre PC,l'acc&egrave;s s'effectue 
@@ -14,7 +14,7 @@
                            Intuitif,complet.C'est le meilleur outil pour contr&ocirc;ler ces affaires.Acc&eacute;der a tes affaires en temps 
                            r&eacute;el de n'importe quelle partie du monde.";
 
-  $lang['about.Template']="Mod&egrave;le:<br> Avec un dessin prefabriqu&eacute;,vous pouvez changer A v&ocirc;tre gout:<br>
+  $lang['about.Template']="Mod&egrave;le:<br> Avec un dessin prefabriqu&eacute;,vous pouvez changer A v&ocirc;tre go&ucirc;t:<br>
                           -Ajouter un logotype.<br>
                           -Changer les couleurs.<br>
                           -Introduire son propre texte,formulaire,etc.<br>

@@ -14,10 +14,10 @@
             
             <div class="bloque_index_color" id="bloque_centro">
                 <h1 class="titulo_bloque"><span class="letra_azul">c</span>rm</h1>
-                <span class="contenido_bloque">Gesti&oacute;n y facturaci&oacute;n basado en web, sin instalaci&oacute;n en su ordenador, 
+                <span class="contenido_bloque"><!--Gesti&oacute;n y facturaci&oacute;n basado en web, sin instalaci&oacute;n en su ordenador, 
                 se accede mediante el navegador. <br><br>Escalable, intuitivo, completo. Es la mejor herramienta para controlar su negocio. 
-                Acceda a su negocio en tiempo real desde cualquier parte del mundo.
-
+                Acceda a su negocio en tiempo real desde cualquier parte del mundo.-->
+                <?=lang('about.hosting')?>
                 </span>
             </div>
             
