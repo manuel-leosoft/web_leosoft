@@ -1,5 +1,5 @@
 <div id="cabecera">
-<a href="inicio"><img width=290px src="<?php echo base_url();?>imagenes/leosoft_logo.png" title="logo Leosoft" /></a>
+<a href="<?php echo base_url() ?>index.php/home/inicio"><img width=290px src="<?php echo base_url();?>imagenes/leosoft_logo.png" title="logo Leosoft" /></a>
 
 	
 <!--<object wmode="transparent" id="prueba" type="application/x-shockwave-flash" data="leosoft.swf" width="290px" height="50px;">

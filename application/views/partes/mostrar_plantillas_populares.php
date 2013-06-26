@@ -1,45 +1,10 @@
 <?php
     
-    //construir la consulta con los valores que vienen del formulario
-    //hay dos por si la primera no encuentra resultados se muestran todas las plantillas
-    $consulta = "SELECT * FROM plantilla WHERE";
-    $consulta_todas = "SELECT * FROM plantilla";
-
-    $plantillas = $_GET["listaPlantillas"];
-    $tipos = $_GET["listaTipos"];
-    
-    $dirRetorno = "";
-    
-    //contador para saber si es el primer tema que lee
-    $contador=1;
-    foreach($plantillas as $value){
-        if($contador==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
-            $consulta=$consulta." tema="."'$value'";
-            $contador++;
-        }
-        else {
-             $consulta=$consulta." OR tema="."'$value'";
-        }
-        $dirRetorno = $dirRetorno."listaPlantillas[]=$value&";
-    }
-    
-    //contador para saber si es el primer tipo que lee
-    $contador=1;
-    foreach($tipos as $value){
-        if($contador==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
-            $consulta=$consulta." OR tipo="."'$value'";
-            $contador++;
-        }
-        else{
-             $consulta=$consulta." OR tipo="."'$value'";
-        }
-        $dirRetorno = $dirRetorno."listaTipos[]=$value&";
-    }
-    
-    $_SESSION["dirRetorno"] = $dirRetorno;
+    //Consulta para que muestre las plantillas m‡s vistas
+    $consulta = "SELECT * FROM plantilla ORDER BY visitas DESC LIMIT 5";
     
     //si no existe la variable ordenar -> se ordena por tema
-    if(!isset($_GET["ordenar"])){
+    /*if(!isset($_GET["ordenar"])){
         $consulta=$consulta." order by tema";
         $consulta_todas=$consulta_todas." order by tema";
         $tipo_orden = "tema";
@@ -49,19 +14,19 @@
         $consulta=$consulta." order by tipo";
         $consulta_todas=$consulta_todas." order by tipo";
         $tipo_orden = "tipo";
-    }
+    }*/
     ?>
     
     <!--div en el que se van a colocar las imagenes de la plantilla-->
-    <div id="contenedor_plantillas">
-    <div class="letra_naranja" style="display:block;float:right;padding-top:20px;font-size:0.9em;margin-right:10px;">
+    <div id="contenedor_plantillas" style="clear:both;">
+    <!--<div class="letra_naranja" style="display:block;float:right;padding-top:20px;font-size:0.9em;margin-right:10px;">
         Ordenado por <span class="letra_azul"><?php echo $tipo_orden; ?></span> de plantilla
          <select name="ordenar_por" id="ordenar_por" onchange="ordenar(this.value);">
           <option value="inicio">Ordenar por</option>
           <option value="tema">Tema</option>
           <option value="tipo">Tipo</option>
         </select>
-    </div>
+    </div>-->
     <?php
     
     //Se guarda el resultado de la consulta y el numero de filas devueltas
@@ -70,17 +35,17 @@
     //$this->Plantilla->mas_visitas();
     
         
-        if($num_rows==0){//si no hay plantillas del tema seleccionado -> mostrar todas
+        /*if($num_rows==0){//si no hay plantillas del tema seleccionado -> mostrar todas
             echo "<br><span class='letra_azul'>NO SE ENCONTRARON PLANTILLAS DEL TEMA SELECCIONADO</span><br><br>";
             
             $resultado = $this->Plantilla->mostrar_plantillas($consulta_todas);
             $num_rows = $this->Plantilla->numero_filas($resultado);
-        }
+        }*/
         
     
         ?>
         <?php
-        echo "<br><span class='letra_azul'>NUMERO DE PLANTILLAS: </span><span class='letra_naranja' style='font-size:1.5em;'>".$num_rows."</span><br><br>"; 
+        //echo "<br><span class='letra_azul'>NUMERO DE PLANTILLAS: </span><span class='letra_naranja' style='font-size:1.5em;'>".$num_rows."</span><br><br>"; 
         foreach ($resultado->result() as $fila){
             //vista previa de la plantilla
             $p = base_url().$fila->vistaPrevia;
@@ -113,6 +78,7 @@
         </div>
         <?php
         }
+
         ?>
 
         <div style="clear:both;"></div>

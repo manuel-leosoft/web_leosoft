@@ -43,4 +43,12 @@ class Plantilla extends CI_Model
             $this->db->query($consulta);
         }
         
+        public function numero_plantillas($cadena)
+        {
+            $consulta = "SELECT * FROM plantilla WHERE ".$cadena;
+            $resultado = $this->db->query($consulta);
+            
+            return $this->numero_filas($resultado);
+        }
+        
 }

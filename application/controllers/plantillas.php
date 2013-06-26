@@ -11,12 +11,28 @@ class Plantillas extends CI_Controller {
             $this->load->view('index.php',$data);
         }
         
-        function contar_numero_plantillas()
+        function contador_numero_plantillas()
         {
-            $this->load->helper('url');  
+            $this->load->helper('url');   
             $this->load->database();
             $this->load->model("Plantilla");
-            $this->load->view('php/contar_numero_plantillas.php');
+            
+            $cadena = "";
+            foreach($_POST as $nombre_campo => $valor){ 
+               $cadena = $cadena."tema='$valor'||"; 
+            } 
+            $cadena = substr($cadena,0,strlen($cadena)-2);
+           
+            $resultado = $this->Plantilla->numero_plantillas($cadena);
+            
+            if($resultado==0)
+            {
+                echo "No hay plantillas para los temas seleccionados. Pulse siguiente para ver todas nuestras plantillas.";
+            }
+            else
+            {
+                echo "Hay un total de <span class='letra_azul' style='font-size:1.2em;'>".$resultado." </span>plantillas para los temas seleccionados.";
+            }
         }
         
         

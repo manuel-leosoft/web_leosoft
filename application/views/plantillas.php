@@ -4,17 +4,20 @@
             <img class="barra" src="imagenes/linea.png" height=3px width=550px />-->
             
             <?php
-                if(!isset($_GET["listaPlantillas"])){
+                if((!isset($_GET["listaPlantillas"]))&&(!isset($_GET["listaTipos"]))){
                     $this->load->view('partes/formulario_plantillas');
+            ?>
+                <div id="error_plantilla"  style="clear:both;">Seleccione al menos un tema para su plantilla.</div>
+                <div id="numero_plantillas"  style="clear:both;"></div>
+            <?php
+                    //VISTA PARA MOSTRAR LAS PLANTILLAS MçS POPULARES
+                    $this->load->view('partes/mostrar_plantillas_populares');
                 }
                 else{
                     $this->load->view('partes/mostrar_plantillas');
                 }
             ?>
         </div>
-        
-        <div id="error_plantilla">Seleccione al menos un tema para su plantilla.</div>
-        <div id="numero_plantillas"></div>
             
         <div style="clear:both;"></div>
       
