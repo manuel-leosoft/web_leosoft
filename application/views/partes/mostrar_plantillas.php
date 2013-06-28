@@ -4,36 +4,103 @@
     //hay dos por si la primera no encuentra resultados se muestran todas las plantillas
     $consulta = "SELECT * FROM plantilla WHERE";
     $consulta_todas = "SELECT * FROM plantilla";
-
-    $plantillas = $_GET["listaPlantillas"];
-    $tipos = $_GET["listaTipos"];
     
     $dirRetorno = "";
     
-    //contador para saber si es el primer tema que lee
-    $contador=1;
-    foreach($plantillas as $value){
-        if($contador==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
-            $consulta=$consulta." tema="."'$value'";
-            $contador++;
+    /*if(isset($_GET["listaPlantillas"])){
+        $plantillas = $_GET["listaPlantillas"];
+        //contador para saber si es el primer tema que lee
+        $contador=1;
+        foreach($plantillas as $value){
+            if($contador==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
+                $consulta=$consulta." tema="."'$value'";
+                $contador++;
+            }
+            else {
+                 $consulta=$consulta." OR tema="."'$value'";
+            }
+            $dirRetorno = $dirRetorno."listaPlantillas[]=$value&";
         }
-        else {
-             $consulta=$consulta." OR tema="."'$value'";
-        }
-        $dirRetorno = $dirRetorno."listaPlantillas[]=$value&";
     }
     
-    //contador para saber si es el primer tipo que lee
-    $contador=1;
-    foreach($tipos as $value){
-        if($contador==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
-            $consulta=$consulta." OR tipo="."'$value'";
-            $contador++;
+    if(isset($_GET["listaTipos"])){
+        $tipos = $_GET["listaTipos"];
+        //contador para saber si es el primer tipo que lee
+        $contador=1;
+        foreach($tipos as $value){
+            if($contador==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
+                if(!isset($_GET["listaPlantillas"])){
+                    $consulta=$consulta." tipo="."'$value'";
+                }
+                else{
+                    $consulta=$consulta." OR tipo="."'$value'";
+                }
+                $contador++;
+            }
+            else{
+                 $consulta=$consulta." OR tipo="."'$value'";
+            }
+            $dirRetorno = $dirRetorno."listaTipos[]=$value&";
         }
-        else{
-             $consulta=$consulta." OR tipo="."'$value'";
+    }*/
+    
+    if(isset($_GET["todas"])){
+        $consulta = $consulta_todas;
+    }
+    
+    
+    if(isset($_GET["listaPlantillas"])){
+        $plantillas = $_GET["listaPlantillas"];
+        //contador para saber si es el primer tema que lee
+        $contador=1;
+        foreach($plantillas as $value){
+            if(($contador==1)||(count($plantillas)==1)){//si es el primer tema que lee -> no hay que poner el OR en la consulta
+                $consulta=$consulta." (tema="."'$value'";
+                $contador++;
+                if(count($plantillas)==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
+                    $consulta=$consulta.")";
+                    $contador++;
+                }
+            }
+            else if($contador==count($plantillas)){//si es el primer tema que lee -> no hay que poner el OR en la consulta
+                $consulta=$consulta." OR tema="."'$value')";
+                $contador++;
+            }
+            else {
+                 $consulta=$consulta." OR tema="."'$value'";
+                 $contador++;
+            }
+            $dirRetorno = $dirRetorno."listaPlantillas[]=$value&";
         }
-        $dirRetorno = $dirRetorno."listaTipos[]=$value&";
+    }
+    
+    if(isset($_GET["listaTipos"])){
+        $tipos = $_GET["listaTipos"];
+        //contador para saber si es el primer tipo que lee
+        $contador=1;
+        foreach($tipos as $value){
+            if($contador==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
+                if(!isset($_GET["listaPlantillas"])){
+                    $consulta=$consulta." (tipo="."'$value'";
+                }
+                else{
+                    $consulta=$consulta." AND (tipo="."'$value'";
+                }
+                if(count($tipos)==1){//si es el primer tema que lee -> no hay que poner el OR en la consulta
+                    $consulta=$consulta.")";
+                    $contador++;
+                }
+                $contador++;
+            }
+            else if($contador==count($tipos)){//si es el primer tema que lee -> no hay que poner el OR en la consulta
+                $consulta=$consulta." OR tipo="."'$value')";
+                $contador++;
+            }
+            else{
+                 $consulta=$consulta." OR tipo="."'$value'";
+            }
+            $dirRetorno = $dirRetorno."listaTipos[]=$value&";
+        }
     }
     
     $_SESSION["dirRetorno"] = $dirRetorno;
@@ -45,10 +112,16 @@
         $tipo_orden = "tema";
     }
     //en este caso existe la variable ordenar y se ordena por tipo
-    else{
+    else if($_GET["ordenar"]=='tipo'){
         $consulta=$consulta." order by tipo";
         $consulta_todas=$consulta_todas." order by tipo";
         $tipo_orden = "tipo";
+    }
+    //en este caso existe la variable ordenar y se ordena por tipo
+    else if($_GET["ordenar"]=='popular'){
+        $consulta=$consulta." order by visitas desc";
+        $consulta_todas=$consulta_todas." order by visitas desc";
+        $tipo_orden = "popularidad";
     }
     ?>
     
@@ -60,6 +133,7 @@
           <option value="inicio">Ordenar por</option>
           <option value="tema">Tema</option>
           <option value="tipo">Tipo</option>
+          <option value="popular">Popular</option>
         </select>
     </div>
     <?php

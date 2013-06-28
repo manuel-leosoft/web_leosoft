@@ -18,10 +18,35 @@ class Plantillas extends CI_Controller {
             $this->load->model("Plantilla");
             
             $cadena = "";
-            foreach($_POST as $nombre_campo => $valor){ 
-               $cadena = $cadena."tema='$valor'||"; 
+            $cadena_tipo = "";
+            $cadena_tema = "";
+            $tipos = array("html","joomla","wordpress");
+            foreach($_POST as $nombre_campo => $valor){
+                /*if(in_array($valor,$tipos)){
+                    $cadena = $cadena."tipo='$valor'||"; 
+                }
+                else{
+                    $cadena = $cadena."tema='$valor'||"; 
+                }*/
+                if(in_array($valor,$tipos)){
+                    $cadena_tipo = $cadena_tipo."tipo='$valor'||"; 
+                }
+                else{
+                    $cadena_tema = $cadena_tema."tema='$valor'||"; 
+                }
             } 
-            $cadena = substr($cadena,0,strlen($cadena)-2);
+            $cadena_tipo = substr($cadena_tipo,0,strlen($cadena_tipo)-2);
+            $cadena_tema = substr($cadena_tema,0,strlen($cadena_tema)-2);
+            if(strlen($cadena_tipo)==0){
+                $cadena = $cadena_tema;
+            }
+            if(strlen($cadena_tema)==0){
+                $cadena = $cadena_tipo;
+            }
+            if((strlen($cadena_tema)!=0)&&(strlen($cadena_tipo)!=0)){
+                $cadena = "(".$cadena_tipo.")AND(".$cadena_tema.")";
+            }
+            //$cadena = substr($cadena,0,strlen($cadena)-2);
            
             $resultado = $this->Plantilla->numero_plantillas($cadena);
             

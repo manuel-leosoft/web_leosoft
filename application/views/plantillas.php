@@ -4,7 +4,7 @@
             <img class="barra" src="imagenes/linea.png" height=3px width=550px />-->
             
             <?php
-                if((!isset($_GET["listaPlantillas"]))&&(!isset($_GET["listaTipos"]))){
+                if((!isset($_GET["listaPlantillas"]))&&(!isset($_GET["listaTipos"]))&&(!isset($_GET["todas"]))){
                     $this->load->view('partes/formulario_plantillas');
             ?>
                 <div id="error_plantilla"  style="clear:both;">Seleccione al menos un tema para su plantilla.</div>

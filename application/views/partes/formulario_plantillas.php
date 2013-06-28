@@ -12,7 +12,7 @@ var params="";
         var cadena_tema = "";
         
         var direccion = "<?php echo $this->session->userdata('url');?>";
-        
+       
         if(elemento.checked==true){
             params = params + elemento.value + "=" + elemento.value+"&";
             
@@ -74,13 +74,20 @@ var params="";
     function marcar_opciones(v){
         var cadena_tipo = "";
         if($("#"+v).is(':checked')){
-            $("#tipo_plantilla").append(" "+cadena_tipo+v);
+            //$("#tipo_plantilla").append(" "+cadena_tipo+v);
+            params = params + v + "=" + v + "&";
         }
         else{
-            var texto = $("#tipo_plantilla").text();
+            
+            cadena = v + "=" + v +"&";
+            params = params.replace(cadena,"");
+            
+            /*var texto = $("#tipo_plantilla").text();
             cadena_tipo = texto.replace(v,"");
-            $("#tipo_plantilla").html(" "+cadena_tipo);
+            $("#tipo_plantilla").html(" "+cadena_tipo);*/
         }
+        //llamada a la funci—n que calcula el nœmero de plantillas
+        numero_plantillas(v);
     }
     
     
@@ -394,10 +401,10 @@ var params="";
 			
 
 			</table>
-			
 
 		</FORM>
                 
+                <a href="<?php echo base_url();?>index.php/plantillas/mostrar?todas">Ver todas </a>
                 <a href="#"><img class="boton_siguiente" src="<?php echo base_url();?>imagenes/siguiente.png" onclick="enviar_formulario_plantillas('formulario_plantillas');"/> </a>
                 
 </div>
