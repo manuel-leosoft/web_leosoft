@@ -1,4 +1,3 @@
-
 /*
 * Funci—n para comprobar que se selecciona al menos un tema de plantillas. 
 * Como par‡metro se le pasa el id del formulario de las plantillas.

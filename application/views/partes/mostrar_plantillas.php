@@ -1,4 +1,7 @@
 <?php
+
+
+    $tipo_web = array("html", "flash");
     
     //construir la consulta con los valores que vienen del formulario
     //hay dos por si la primera no encuentra resultados se muestran todas las plantillas
@@ -44,6 +47,19 @@
         }
     }*/
     
+    //CODIGO PARA LOS ENLACES DIRECTOS
+    if(isset($_GET["tipo"])){
+        $tipo = $_GET["tipo"];
+        if($tipo == "web"){
+            foreach ($tipo_web as $valor){
+                $consulta = $consulta." tipo = '$valor' OR";
+            }
+        }
+        $consulta = substr($consulta,0,strlen($consulta)-2);
+    }
+    
+    
+    //CODIGO PARA MOSTRAR TODAS LAS PLANTILLAS
     if(isset($_GET["todas"])){
         $consulta = $consulta_todas;
     }
@@ -98,6 +114,7 @@
             }
             else{
                  $consulta=$consulta." OR tipo="."'$value'";
+                 $contador++;
             }
             $dirRetorno = $dirRetorno."listaTipos[]=$value&";
         }

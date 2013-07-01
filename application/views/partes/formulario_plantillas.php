@@ -93,11 +93,11 @@ var params="";
     
 </script>
 
- <span class="plantilla">Seleccione el tema de su plantilla:</span>
+ <!--<span class="plantilla">Seleccione el tema de su plantilla:</span>-->
  
  
- <div style="display:block">
-		<FORM id="formulario_plantillas" style="padding-top:30px;"  ACTION="<?php echo base_url();?>index.php/plantillas/mostrar" METHOD="GET">
+ <div style="display:block;">
+		<FORM id="formulario_plantillas" style="padding-top:30px;"  ACTION="<?php echo base_url();?>index.php/plantillas/mostrar?tipo=web" METHOD="GET">
                         <div onclick="mostrar_filtro('tipo');"style="padding:5px;border:1px solid black;width:50px;text-align:center;background-color:white;">Tipo</div> 
                         <span id="tipo_plantilla"></span>
                         <div id="lista_tipo_plantilla" style="display:none;">

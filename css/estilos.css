@@ -104,7 +104,60 @@ body{
 
 /*------------------------ CONTENIDO-----------------------------------*/
 #contenido{
-    padding:35px;
+    padding:0px;
+}
+
+#boton_dominio{
+    background-color:white;
+    margin-top:30px;
+    padding:25px;
+    font-size:1.3em;
+    padding-left:40px;
+}
+
+#dominio{
+    background-position:left center;
+    padding-left:65px;
+    width:200px;
+    background-image:url(../imagenes/www.png);
+    background-repeat:no-repeat;
+    height:25px;
+    border:1px solid #065c9f;
+    margin-left:30px;
+    margin-top:-5px;
+    font-size:17px;
+    color:#8A8D91;
+}
+
+#boton_buscar_dominio{
+    border:none;
+    width:109px;
+    height:34px;
+    background-image:url(../imagenes/buscar_dominio.png);
+    background-repeat:no-repeat;
+    background-color:white;
+    margin-left:30px;
+}
+
+#boton_buscar_dominio:hover{
+    background-image:url(../imagenes/buscar_dominio_hover.png);
+    background-repeat:no-repeat;
+}
+
+#boton_buscar_dominio:active{
+    border-radius:5px; 
+    -moz-border-radius:5px;   
+    -webkit-border-radius:5px;
+    box-shadow: inset 0px 0px 15px black;
+    -moz-box-shadow: inset 0px 0px 15px black;
+    -webkit-box-shadow: inset 0px 0px 15px black;
+
+}
+
+#extension{
+    font-size:0.8em;
+    color:#8A8D91;
+    margin-left:30px;
 }
 
 #contenido_izquierda{

@@ -1,7 +1,7 @@
 <?php
     
     //Consulta para que muestre las plantillas m‡s vistas
-    $consulta = "SELECT * FROM plantilla ORDER BY visitas DESC LIMIT 5";
+    $consulta = "SELECT * FROM plantilla ORDER BY visitas DESC LIMIT 10";
     
     //si no existe la variable ordenar -> se ordena por tema
     /*if(!isset($_GET["ordenar"])){

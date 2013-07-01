@@ -18,6 +18,8 @@
     <link href="<?php echo base_url();?>css/plantillas.css" type="text/css" rel="stylesheet" />
     <!-- css formularios -->
     <link href="<?php echo base_url();?>css/formularios.css" type="text/css" rel="stylesheet" />
+    <!-- css cabecera -->
+    <link href="<?php echo base_url();?>css/cabecera.css" type="text/css" rel="stylesheet" />
     
     <!-- enlazar javascript y jquery -->
     <script src="<?php echo base_url();?>jquery/jquery-1.9.1.min.js" type="text/javascript"/></script>

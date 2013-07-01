@@ -23,6 +23,9 @@
                    i=1;
                }
                var url = "<?php echo $this->session->userdata('url');?>";
+               alert(url);
+               var prueba="<?php echo base_url().$ruta; ?>";
+               alert(prueba);
                demo("<?php echo base_url().$ruta; ?>",url,"<?php echo $id; ?>",i);
                 
          </script>

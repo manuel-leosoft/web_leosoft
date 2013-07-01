@@ -3,10 +3,12 @@ class Home extends CI_Controller {
 
 	public function inicio(){
 		$this->load->helper('url');  
-		$data['title'] = 'Home';
-                $this->session->set_userdata('url',base_url());
-		$data['main_content'] = 'principal'; 
-		$this->load->view('index.php',$data);
+                $this->load->database();
+                $this->load->model("Plantilla");
+                $plantilla = new $this->Plantilla();
+                $data['title'] = 'Plantillas';
+                $data['main_content'] = 'plantillas';
+                $this->load->view('index.php',$data);
 	}
 public function quienes_somos(){
 		$this->load->helper('url');  
