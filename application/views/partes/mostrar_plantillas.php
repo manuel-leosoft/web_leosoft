@@ -179,7 +179,7 @@
             $ruta = $fila->ruta;
             $id = $fila->id;
         ?>
-        <div id="vista_previa">
+        <div class="vista_previa">
             <img class="vista_previa_plantilla" src='<?php echo base_url().$fila->vistaPrevia_m; ?>' onmouseover="<?php echo $vista_previa ?>" onmouseout="hidetrail();"/>
             <div id="demo" class="barra_descarga_demo">
                 <a class="enlace_demo_descargar" href="javascript:void(window.open('<?php echo base_url()?>index.php/plantillas/demo?plantilla=<?php echo $ruta; ?>&&id=<?php echo $id; ?>','Demo plantilla','resizable=no,location=no,menubar=no, scrollbars=no,status=no,toolbar=no,fullscreen=yes,dependent=no,width=980,height=800,left=100,top=100' ))">Demo</a> | 

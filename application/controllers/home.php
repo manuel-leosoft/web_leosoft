@@ -6,6 +6,7 @@ class Home extends CI_Controller {
                 $this->load->database();
                 $this->load->model("Plantilla");
                 $plantilla = new $this->Plantilla();
+                $this->session->set_userdata('url',base_url());
                 $data['title'] = 'Plantillas';
                 $data['main_content'] = 'plantillas';
                 $this->load->view('index.php',$data);
