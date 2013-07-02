@@ -45,11 +45,13 @@ p, li {
 }
 
 .hdr-brand a {
-    background: url("../imagenes/leosoft_logo_pie.png") no-repeat scroll 0 0 transparent;
+    background: url("../imagenes/logodavinci.png") no-repeat scroll 0 0 transparent;
     display: block;
-    height: 30px;
+    height: 95px;
     overflow: hidden;
-    width: 150px;
+    width: 250px;
+    margin-left:-50px;
+    margin-right:-50px;
 }
 a {
     color: #0077C8;

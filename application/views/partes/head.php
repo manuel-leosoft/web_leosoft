@@ -5,7 +5,7 @@
     <title><?php echo $title;?></title>
     
     <!-- enlazar favicon -->
-    <link rel="shortcut icon" href="<?php echo base_url();?>/imagenes/favicon.ico" >
+    <link rel="shortcut icon" href="<?php echo base_url();?>/favicon.ico" >
     
     <!-- enlazar CSS -->
     <!-- css ventana emergente-->

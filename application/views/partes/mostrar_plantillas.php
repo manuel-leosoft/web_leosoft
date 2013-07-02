@@ -1,5 +1,25 @@
 <?php
 
+//--------------------- PAGINADOR ------------------------
+//numero de plantillas mostradas
+$limit = 8;
+// pagina pedida
+if(!isset($_GET["pag"])){
+    $pag=0;
+}
+else{
+    $pag = (int) $_GET["pag"];
+}
+
+if ($pag < 1)
+{
+   $pag = 1;
+}
+$offset = ($pag-1) * $limit;
+
+$parametros = ""; //variable para guardar los parametros pasados por url para hacer el paginador
+
+//*******************************************************
 
     $tipo_web = array("html", "flash");
     
@@ -53,6 +73,7 @@
         if($tipo == "web"){
             foreach ($tipo_web as $valor){
                 $consulta = $consulta." tipo = '$valor' OR";
+                $parametros = $parametros."&tipo=$valor";
             }
         }
         $consulta = substr($consulta,0,strlen($consulta)-2);
@@ -62,6 +83,7 @@
     //CODIGO PARA MOSTRAR TODAS LAS PLANTILLAS
     if(isset($_GET["todas"])){
         $consulta = $consulta_todas;
+        $parametros = $parametros."&todas";
     }
     
     
@@ -86,6 +108,7 @@
                  $consulta=$consulta." OR tema="."'$value'";
                  $contador++;
             }
+            $parametros = $parametros."&listaPlantillas[]=$value";
             $dirRetorno = $dirRetorno."listaPlantillas[]=$value&";
         }
     }
@@ -116,6 +139,7 @@
                  $consulta=$consulta." OR tipo="."'$value'";
                  $contador++;
             }
+            $parametros = $parametros."&listaTipos[]=$valor";
             $dirRetorno = $dirRetorno."listaTipos[]=$value&";
         }
     }
@@ -142,23 +166,14 @@
     }
     ?>
     
-    <!--div en el que se van a colocar las imagenes de la plantilla-->
-    <div id="contenedor_plantillas">
-    <div class="letra_naranja" style="display:block;float:right;padding-top:20px;font-size:0.9em;margin-right:10px;">
-        Ordenado por <span class="letra_azul"><?php echo $tipo_orden; ?></span> de plantilla
-         <select name="ordenar_por" id="ordenar_por" onchange="ordenar(this.value);">
-          <option value="inicio">Ordenar por</option>
-          <option value="tema">Tema</option>
-          <option value="tipo">Tipo</option>
-          <option value="popular">Popular</option>
-        </select>
-    </div>
+   
     <?php
     
+    $resultado2 = $this->Plantilla->mostrar_plantillas($consulta);
+    $consulta = $consulta." LIMIT $offset,$limit";
     //Se guarda el resultado de la consulta y el numero de filas devueltas
     $resultado = $this->Plantilla->mostrar_plantillas($consulta);
-    $num_rows = $this->Plantilla->numero_filas($resultado);
-    //$this->Plantilla->mas_visitas();
+    $num_rows = $this->Plantilla->numero_filas($resultado2);
     
         
         if($num_rows==0){//si no hay plantillas del tema seleccionado -> mostrar todas
@@ -170,42 +185,23 @@
         
     
         ?>
-        <?php
-        echo "<br><span class='letra_azul'>NUMERO DE PLANTILLAS: </span><span class='letra_naranja' style='font-size:1.5em;'>".$num_rows."</span><br><br>"; 
-        foreach ($resultado->result() as $fila){
-            //vista previa de la plantilla
-            $p = base_url().$fila->vistaPrevia;
-            $vista_previa = "showtrail(0,0,'$p');";
-            $ruta = $fila->ruta;
-            $id = $fila->id;
-        ?>
-        <div class="vista_previa">
-            <img class="vista_previa_plantilla" src='<?php echo base_url().$fila->vistaPrevia_m; ?>' onmouseover="<?php echo $vista_previa ?>" onmouseout="hidetrail();"/>
-            <div id="demo" class="barra_descarga_demo">
-                <a class="enlace_demo_descargar" href="javascript:void(window.open('<?php echo base_url()?>index.php/plantillas/demo?plantilla=<?php echo $ruta; ?>&&id=<?php echo $id; ?>','Demo plantilla','resizable=no,location=no,menubar=no, scrollbars=no,status=no,toolbar=no,fullscreen=yes,dependent=no,width=980,height=800,left=100,top=100' ))">Demo</a> | 
-                <?php 
-                    if (!isset($_SESSION['carro'][$fila->id])){
-                ?>
-                    <a onclick="carrito('add',<?php echo $fila->id ?>);" class="enlace_demo_descargar" href="#">A&ntilde;adir carro</a>
-                <?php
-                }
-                else{
-                ?>
-                    <a onclick="carrito('remove',<?php echo $fila->id ?>);" class="enlace_demo_descargar" href="#">Eliminar</a>
-                <?php
-                }
-                ?>
-            </div>
-            <span style="margin-left:10px">Tipo: <span class="tipo"> <?php echo $fila->tipo; ?></span></span><br>
-            <span style="margin-left:10px">Tema: <a href="plantilla2.php?listaPlantillas[]=<?php echo $fila->tema; ?>"><?php echo $fila->tema; ?></a></span><br>
-            <span style="margin-left:10px">Precio: <span class="tipo"> <?php echo $fila->precio; ?>&euro;</span></span><br>
-            <span style="margin-left:10px">Ref: <span class="tipo" style="font-size:0.9em;"> <?php echo $fila->referencia; ?></span></span><br>
-            <span style="margin-left:10px">Visitas: <span class="tipo"> <?php echo $fila->visitas; ?></span></span>
+         <!--div en el que se van a colocar las imagenes de la plantilla-->
+        <div id="contenedor_plantillas">
+            <?php
+            include("pestana_ordenar.php");
+            include("vista_previa_plantillas.php");
+            $totalPag = ceil($num_rows/$limit);
+            $links = array();
+            $url="http://".$_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+            for( $i=1; $i<=$totalPag ; $i++)
+             {                
+                $url = str_replace("&pag=$i","",$url);
+                //$links[] = "<a href=\"?pag=$i$parametros\">$i</a>"; 
+                $links[] = "<a href=$url&pag=$i>$i</a>";
+             }
+         
+         echo implode(" - ", $links);
+        
+            ?>
         </div>
-        <?php
-        }
-        ?>
-
-        <div style="clear:both;"></div>
-    </div>
         

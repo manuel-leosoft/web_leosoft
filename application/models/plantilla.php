@@ -22,7 +22,6 @@ class Plantilla extends CI_Model
             return $this->db->query($consulta);
         }
         
-        
         public function numero_filas($resultado)
         {
             return $resultado->num_rows();

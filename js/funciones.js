@@ -130,15 +130,15 @@ function followmouse(e)
                 }
             }
             if(tipo=='tipo'){//para ordenar por tipo a–ade una variable ordenar
-                url = url + "&ordenar=tipo";
+                url = url + "&ordenar=tipo&pag=1";
                 window.location.href = url;
             }
             else if(tipo=='popular'){//para ordenar por tipo a–ade una variable ordenar
-                url = url + "&ordenar=popular";
+                url = url + "&ordenar=popular&pag=1";
                 window.location.href = url;
             }
             else{//para ordenar por tema se hace una redireccion a la pagina sin la variable ordenar
-                window.location.href = url;
+                window.location.href = url+ "&pag=1";
             }
         }
 
