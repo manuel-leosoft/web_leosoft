@@ -1,7 +1,7 @@
 <?php
     
     //Consulta para que muestre las plantillas m‡s vistas
-    $consulta = "SELECT * FROM plantilla ORDER BY visitas DESC LIMIT 8";
+    $consulta = "SELECT * FROM plantilla ORDER BY visitas DESC LIMIT 24";
     
     //si no existe la variable ordenar -> se ordena por tema
     /*if(!isset($_GET["ordenar"])){
@@ -47,7 +47,7 @@
         <div id="contenedor_plantillas" style="clear:both;">
             <?php
             $prueba = 1;
-             include("vista_previa_plantillas.php");
+             include("slider_plantillas_populares.php");
              ?>
         </div>
         

@@ -35,10 +35,10 @@
                                         </p>
                                         <ul class="sections h-inb inb-list">
                                             <li><a id="menu_link_brand" href="<?php echo base_url();?>index.php/plantillas/mostrar?tipo=web" class=""><strong>Plantillas web</strong></a></li>
-                                            <li><a id="menu_link_store" href="http://tiendamoviles.tuenti.com/" class=""><strong>Tiendas online</strong></a></li>
-                                            <li><a id="submenu_link_tariffs" href="index.html" class=""><strong>Plantillas WordPress</strong></a></li>
-                                            <li><a id="menu_link_retailers" href="index.html" class=""><strong>Plantillas Joomla</strong></a></li>
-                                            <li><a id="menu_link_support" href="index.html" class=""><strong>Plantillas PrestaShop</strong></a></li>
+                                            <li><a id="submenu_link_tariffs" href="<?php echo base_url();?>index.php/plantillas/mostrar?tipo=cms" class=""><strong>Plantillas Cms</strong></a></li>
+                                            <li><a id="menu_link_store" href="<?php echo base_url();?>index.php/plantillas/mostrar?tipo=tienda" class=""><strong>Tiendas online</strong></a></li>
+                                            <!--<li><a id="menu_link_retailers" href="index.html" class=""><strong>Plantillas Joomla</strong></a></li>
+                                            <li><a id="menu_link_support" href="index.html" class=""><strong>Plantillas PrestaShop</strong></a></li>-->
                                         </ul>
                                     </div>
                                     

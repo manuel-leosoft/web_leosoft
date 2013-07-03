@@ -22,6 +22,7 @@ $parametros = ""; //variable para guardar los parametros pasados por url para ha
 //*******************************************************
 
     $tipo_web = array("html", "flash");
+    $tipo_cms = array("joomla", "wordpress");
     
     //construir la consulta con los valores que vienen del formulario
     //hay dos por si la primera no encuentra resultados se muestran todas las plantillas
@@ -72,6 +73,12 @@ $parametros = ""; //variable para guardar los parametros pasados por url para ha
         $tipo = $_GET["tipo"];
         if($tipo == "web"){
             foreach ($tipo_web as $valor){
+                $consulta = $consulta." tipo = '$valor' OR";
+                $parametros = $parametros."&tipo=$valor";
+            }
+        }
+        if($tipo == "cms"){
+            foreach ($tipo_cms as $valor){
                 $consulta = $consulta." tipo = '$valor' OR";
                 $parametros = $parametros."&tipo=$valor";
             }
@@ -172,18 +179,20 @@ $parametros = ""; //variable para guardar los parametros pasados por url para ha
     $resultado2 = $this->Plantilla->mostrar_plantillas($consulta);
     $consulta = $consulta." LIMIT $offset,$limit";
     //Se guarda el resultado de la consulta y el numero de filas devueltas
-    $resultado = $this->Plantilla->mostrar_plantillas($consulta);
+    //$resultado = $this->Plantilla->mostrar_plantillas($consulta);
     $num_rows = $this->Plantilla->numero_filas($resultado2);
     
         
         if($num_rows==0){//si no hay plantillas del tema seleccionado -> mostrar todas
             echo "<br><span class='letra_azul'>NO SE ENCONTRARON PLANTILLAS DEL TEMA SELECCIONADO</span><br><br>";
-            
+        
             $resultado = $this->Plantilla->mostrar_plantillas($consulta_todas);
             $num_rows = $this->Plantilla->numero_filas($resultado);
+            $consulta_todas = $consulta_todas." LIMIT $offset,$limit";
+            $resultado = $this->Plantilla->mostrar_plantillas($consulta_todas);
         }
-        
-    
+        else
+            $resultado = $this->Plantilla->mostrar_plantillas($consulta);
         ?>
          <!--div en el que se van a colocar las imagenes de la plantilla-->
         <div id="contenedor_plantillas">

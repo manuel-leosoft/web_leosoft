@@ -1,14 +1,24 @@
 <?php
     $contador = 1;
-        
-    foreach ($resultado->result() as $fila){
+    ?>
+    
+    <div id="container">
+    <div id="slider">
+    <ul>
+    
+    <?php
+    foreach ($resultado->result() as $indice=>$fila){
         //vista previa de la plantilla
         $p = base_url().$fila->vistaPrevia;
         $vista_previa = "showtrail(0,0,'$p');";
         $ruta = $fila->ruta;
         $id = $fila->id;
+        if(($indice%4==0)){
+            echo "<li>";
+        }
+    
     ?>
-    <div class="vista_previa" id=<?php echo "vista_previa".$contador?>>
+    <div class="vista_previa" id=<?php echo "vista_previa".$contador?> >
     <?php 
         if(isset($prueba)&&($prueba==1)){
     ?>
@@ -39,7 +49,12 @@
         <span style="margin-left:10px">Ref: <span class="tipo" style="font-size:0.9em;"> <?php echo $fila->referencia; ?></span></span><br>
         <span style="margin-left:10px">Visitas: <span class="tipo"> <?php echo $fila->visitas; ?></span></span>
     </div>
+    
     <?php
+    
+    if((($indice+1)%4==0)&&($indice!=0)){
+            echo "</li>";
+        }
     if($contador%4==0){
         $id_vista_previa = "#vista_previa".$contador;
     ?>
@@ -50,7 +65,7 @@
     </script>
                     
     <?php
-    echo "<div style='border-bottom:1px dotted #d0d0d0;clear:both;padding-right:10px;'></div>";
+    //echo "<div style='border-bottom:1px dotted #d0d0d0;clear:both;padding-right:10px;'></div>";
     }
     $contador++;
     }//FIN FOREACH
@@ -58,3 +73,8 @@
 
         <div style="clear:both;"></div>
         
+                
+			</ul>
+		</div><!--fin slider-->
+        </div><!--fin container-->
+                

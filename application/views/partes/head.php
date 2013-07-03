@@ -20,24 +20,34 @@
     <link href="<?php echo base_url();?>css/formularios.css" type="text/css" rel="stylesheet" />
     <!-- css cabecera -->
     <link href="<?php echo base_url();?>css/cabecera.css" type="text/css" rel="stylesheet" />
+    <!-- css cabecera -->
+    <link href="<?php echo base_url();?>css/easy_slider.css" type="text/css" rel="stylesheet" />
     
     <!-- enlazar javascript y jquery -->
-    <script src="<?php echo base_url();?>jquery/jquery-1.9.1.min.js" type="text/javascript"/></script>
-    <script src="<?php echo base_url();?>jquery/jquery-ui.js" type="text/javascript"/></script>
-    <script src="<?php echo base_url();?>js/formulario_contacta.js" type="text/javascript"/></script>
-    <script src="<?php echo base_url();?>js/ventana_emergente.js" type="text/javascript"/></script>
-    <script src="<?php echo base_url();?>js/funciones_ajax.js" type="text/javascript"/></script>
-    <script src="<?php echo base_url();?>js/funciones.js" type="text/javascript"/></script>
+    <script src="<?php echo base_url();?>jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>jquery/jquery-ui.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>js/formulario_contacta.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>js/ventana_emergente.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>js/funciones_ajax.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>js/funciones.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>js/easySlider1.7.js" type="text/javascript"></script>
     
     <!-- c�digo para el slider -->
     <script type="text/javascript">
-        $(function(){
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true, 
+				continuous: false,
+                                pause:1000000,
+			});
+		});	
+      /*  $(function(){
             $('#slider div:gt(0)').hide();
             setInterval(function(){
               $('#slider div:first-child').fadeOut(0)
                  .next('div').fadeIn(1000)
                  .end().appendTo('#slider');}, 8000);
-        });
+        });*/
     </script>
     
     

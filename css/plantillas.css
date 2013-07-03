@@ -170,4 +170,27 @@ div a, .tipo{
     color:#065C9F;
 }
 
+#slider .enlace_demo_descargar{
+    color:#065C9F;
+    font-size:1em;
+}
+
+.enlace_demo_descargar:hover{
+    color:#065C9F;
+    text-decoration:underline;
+}
+
+.tema{
+    color:#065C9F;
+}
+
+.tema:hover{
+    text-decoration:underline;
+    color:#065C9F;
+}
+
+#slider .tema{
+    font-size:1em;
+}
+
 /*----------------- FIN PLANTILLAS -------------------------------*/
